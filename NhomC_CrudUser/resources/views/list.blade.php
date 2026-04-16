@@ -77,7 +77,7 @@
 <div class="container mt-3">
     <div class="border-frame">
         <a href="#" style="text-decoration: none; color: #333;">Home</a> | 
-        <a href="#" style="text-decoration: none; color: #333;"><b>Đăng xuất</b></a>
+        <a href="{{ route('signout') }}" style="text-decoration: none; color: #333;"><b>Đăng xuất</b></a>
     </div>
 
     <h2 class="title-page">Danh sách user</h2>
@@ -98,9 +98,9 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td class="action-links">
-                    <a href="#">Edit</a> | 
-                    <a href="#">View</a> | 
-                    <a href="#">Delete</a>
+                    <a href="{{ route('user.updateUser', ['id' => $user->id]) }}">Edit</a> | 
+                    <a href="{{ route('user.viewUser', ['id' => $user->id]) }}">View</a> | 
+                    <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}" onclick="return confirm('Bạn có chắc chắn muốn xóa không?');" >Delete</a>
                 </td>
             </tr>
             @endforeach
