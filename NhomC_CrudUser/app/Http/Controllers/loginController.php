@@ -36,4 +36,11 @@ class loginController extends Controller
             'email' => 'email or mat khau khong chinh xac',
         ])->withInput($request->only('email'));
     }
+    // dang xuat
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }
