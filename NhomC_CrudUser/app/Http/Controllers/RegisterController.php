@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-class Controllers_register extends Controller
+class RegisterController extends Controller
 {
     // Hiển thị form đăng ký
     public function index()
