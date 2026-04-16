@@ -28,7 +28,7 @@
             border-bottom: 1px solid #eee;
         }
 
-        /* Tối ưu thanh Navigation */
+    
         .nav {
             border-bottom: 1px solid #eee;
             background: #fafafa;
@@ -55,7 +55,7 @@
             color: #000;
         }
 
-        /* Box đăng ký */
+      
         .register-box {
             width: 380px;
             margin: 40px auto;
@@ -84,12 +84,12 @@
         input {
             width: 100%;
             padding: 8px 12px;
-            box-sizing: border-box; /* Quan trọng để input không tràn */
+            box-sizing: border-box; 
             border: 1px solid #ccc;
             border-radius: 4px;
         }
 
-        /* Căn chỉnh các nút hành động */
+       
         .actions {
             margin-top: 25px;
             display: flex;
@@ -109,7 +109,7 @@
             text-decoration: underline;
         }
 
-        /* Làm đẹp nút Đăng ký */
+        
         button {
             background: #1e88e5;
             color: white;
@@ -139,7 +139,6 @@
 <body>
 
     <div class="container">
-        <div class="header">Lập trình web</div>
 
         <div class="nav">
             <ul>
