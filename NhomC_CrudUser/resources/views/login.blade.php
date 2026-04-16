@@ -128,9 +128,9 @@
 
       <div class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="">Home</a>
+                <a class="nav-link" href="#">Home</a>
             </li> | <li class="nav-item">
-                <a class="nav-link" href="">Đăng Nhập</a>
+                <a class="nav-link" href="{{ route('login') }}">Đăng Nhập</a>
             </li>| <li class="nav-item">
                 <a class="nav-link" href="{{ route('user.register') }}">Đăng ký</a>
             </li>

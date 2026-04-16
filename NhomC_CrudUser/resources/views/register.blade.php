@@ -142,8 +142,8 @@
 
         <div class="nav">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/login">Đăng nhập</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="{{ route('login') }}">Đăng nhập</a></li>
                 <li><a href="/register">Đăng ký</a></li>
             </ul>
         </div>

@@ -129,7 +129,7 @@
     </div>
 
     <div class="nav-box">
-        <a href="/">Home</a> | <a href="/login">Đăng nhập</a> | <a href="#">Đăng ký</a>
+        <a href="#">Home</a> | <a href="{{ route('login') }}">Đăng nhập</a> | <a href="{{ route('user.register') }}">Đăng ký</a>
     </div>
 
     <div class="content-area">
