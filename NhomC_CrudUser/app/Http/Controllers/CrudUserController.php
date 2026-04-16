@@ -154,3 +154,4 @@ class CrudUserController extends Controller
         return Redirect('login');
     }
 
+}

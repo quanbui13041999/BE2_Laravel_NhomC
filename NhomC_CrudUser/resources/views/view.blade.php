@@ -73,7 +73,7 @@
 <div class="container mt-3">
     <div class="border-frame">
         <a href="{{ url('/') }}" style="text-decoration: none; color: #333;">Home</a> | 
-        <a href="#" style="text-decoration: none; color: #333;"><b>Đăng xuất</b></a>
+        <a href="{{ route('signout') }}" style="text-decoration: none; color: #333;"><b>Đăng xuất</b></a>
     </div>
 
     <div class="detail-card">

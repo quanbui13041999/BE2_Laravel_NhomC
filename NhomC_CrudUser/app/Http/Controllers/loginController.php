@@ -32,7 +32,7 @@ class LoginController extends Controller
             'password' => $request->password
         ])) {
             $request->session()->regenerate();
-            return redirect('/');
+            return redirect('list');
         }
 
         return back()->withErrors([

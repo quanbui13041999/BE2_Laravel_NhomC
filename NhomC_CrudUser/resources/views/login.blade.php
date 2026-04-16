@@ -96,6 +96,27 @@
         text-align: center;
         margin-top: 40px;
     }
+    .nav {
+    display: flex;            
+    list-style: none;         
+    padding: 0;
+    margin: 0;
+    justify-content: center;  
+    align-items: center;      
+}
+
+
+.nav-item {
+    display: inline;          
+}
+
+.nav-link {
+    text-decoration: none;    
+    color: #000;           
+    padding: 0 10px;         
+}
+
+
 </style>
 
 <body>
@@ -105,8 +126,14 @@
             Lập trình web
         </div>
 
-        <div class="nav">
-            Home | Đăng nhập | Đăng ký
+      <div class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="">Home</a>
+            </li> | <li class="nav-item">
+                <a class="nav-link" href="">Đăng Nhập</a>
+            </li>| <li class="nav-item">
+                <a class="nav-link" href="{{ route('user.register') }}">Đăng ký</a>
+            </li>
         </div>
 
         <div class="login-box">
