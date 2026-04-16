@@ -20,7 +20,7 @@ class UpdateUserController extends Controller
             return redirect('list')->withErrors('Người dùng không tồn tại');
         }
 
-        return view('crud_user.update', ['user' => $user]);
+        return view('update', ['user' => $user]);
     }
 
     /**
