@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Error;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Psy\ManualUpdater\Checker;
 
-class loginController extends Controller
+class LoginController extends Controller
 {
-    public function showLoginForm() {
-        if(Auth::check()) {
-             return redirect('/');
+    public function showLoginForm()
+    {
+        if (Auth::check()) {
+            return redirect('/');
         }
-        return view('/');
+        return view('login');
     }
-    // xu ly dang nhap
-    public function login(Request $request) {
-        $validated = $request->validate([
+
+    public function login(Request $request)
+    {
+        $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:6',
         ], [
@@ -28,16 +26,22 @@ class loginController extends Controller
             'password.required' => 'Mật khẩu không được để trống',
             'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
         ]);
-         if (Auth::attempt($validated)) {
+
+        if (Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password
+        ])) {
             $request->session()->regenerate();
             return redirect('/');
         }
+
         return back()->withErrors([
-            'email' => 'email or mat khau khong chinh xac',
+            'email' => 'Email hoặc mật khẩu không chính xác',
         ])->withInput($request->only('email'));
     }
-    // dang xuat
-    public function logout(Request $request){
+
+    public function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
