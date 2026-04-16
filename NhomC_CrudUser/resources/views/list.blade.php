@@ -100,7 +100,7 @@
                 <td class="action-links">
                     <a href="{{ route('user.updateUser', ['id' => $user->id]) }}">Edit</a> | 
                     <a href="{{ route('user.viewUser', ['id' => $user->id]) }}">View</a> | 
-                    <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}">Delete</a>
+                    <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}" onclick="return confirm('Bạn có chắc chắn muốn xóa không?');" >Delete</a>
                 </td>
             </tr>
             @endforeach
