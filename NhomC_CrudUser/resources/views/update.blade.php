@@ -114,9 +114,9 @@
     </div>
 
     <div class="nav-bar">
-        <a href="/">Home</a> | 
+        <a href="#">Home</a> | 
         <a href="{{ route('login') }}">Đăng nhập</a> | 
-        <a href="#">Đăng ký</a>
+        <a href="{{ route('user.register') }}">Đăng ký</a>
     </div>
 
     <div class="main-content">
