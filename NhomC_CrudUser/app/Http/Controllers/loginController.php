@@ -11,5 +11,22 @@ use Psy\ManualUpdater\Checker;
 
 class loginController extends Controller
 {
-    
+    public function showLoginForm() {
+        if(Auth::check()) {
+             return redirect('/');
+        }
+        return view('/');
+    }
+    // xu ly dang nhap
+    public function login(Request $request) {
+        $validated = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ], [
+            'email.required' => 'Email không được để trống',
+            'email.email' => 'Email không hợp lệ',
+            'password.required' => 'Mật khẩu không được để trống',
+            'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
+        ]);
+    }
 }
