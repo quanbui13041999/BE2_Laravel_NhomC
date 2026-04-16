@@ -1,21 +1,10 @@
 <?php
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-use App\Http\Controllers\listcontroler;
-=======
-use App\Http\Controllers\viewcontroler;
->>>>>>> origin/dat/view
-=======
-
->>>>>>> test
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
-use App\Http\Controllers\DeleteUserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\listcontroler;
-use App\Http\Controllers\UpdateUserController;
 use App\Http\Controllers\viewcontroler;
 
 /*
@@ -28,45 +17,23 @@ use App\Http\Controllers\viewcontroler;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> test
 
-// --- QUẢN LÝ USER (CÁC CONTROLLER ĐÃ TÁCH) ---
-
-// 1. Danh sách User
-Route::get('list', [listcontroler::class, 'listUser'])->name('user.list');
-<<<<<<< HEAD
-=======
-Route::get('view', [viewcontroler::class, 'viewUser'])->name('user.viewUser');
->>>>>>> origin/dat/view
-=======
-
-// 2. Xem chi tiết User
-Route::get('view', [viewcontroler::class, 'viewUser'])->name('user.viewUser');
-
-// 3. Cập nhật User (Update)
-Route::get('/update-user', [UpdateUserController::class, 'showUpdateForm'])->name('user.updateUser');
-// Route xử lý lưu dữ liệu update
-Route::post('/post-update-user', [UpdateUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
-
-// 4. Xóa User (Delete)
-Route::get('/delete-user', [DeleteUserController::class, 'deleteUser'])->name('user.deleteUser');
+// Các route quản lý User (CrudUserController)
+Route::get('dashboard', [CrudUserController::class, 'dashboard']);
+Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
+Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
+Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
 
 
-// --- ĐĂNG KÝ (RegisterController) ---
+// Đăng ký (RegisterController)
 Route::get('/register', [RegisterController::class, 'index'])->name('user.register');
 Route::post('/register', [RegisterController::class, 'store']);
 
-
-// --- ĐĂNG NHẬP / ĐĂNG XUẤT (LoginController) ---
+// Đăng nhập/Đăng xuất (LoginController)
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
-// --- CÁC ROUTE CÒN LẠI (TỪ CRUDUSERCONTROLLER CŨ) ---
-Route::get('dashboard', [CrudUserController::class, 'dashboard']);
-Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
->>>>>>> test
+// Danh sách và Xem chi tiết
+Route::get('list', [listcontroler::class, 'listUser'])->name('user.list');
+Route::get('view', [viewcontroler::class, 'viewUser'])->name('user.viewUser');
