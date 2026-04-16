@@ -1,7 +1,7 @@
 @extends('dashboard')
 
 @section('content')
-<<<<<<< HEAD
+
 
 <main class="delete-form">
     <div class="container">
