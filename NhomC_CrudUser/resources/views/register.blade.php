@@ -139,7 +139,6 @@
 <body>
 
     <div class="container">
-        <div class="header">Lập trình web</div>
 
         <div class="nav">
             <ul>
