@@ -28,5 +28,12 @@ class loginController extends Controller
             'password.required' => 'Mật khẩu không được để trống',
             'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
         ]);
+         if (Auth::attempt($validated)) {
+            $request->session()->regenerate();
+            return redirect('/');
+        }
+        return back()->withErrors([
+            'email' => 'email or mat khau khong chinh xac',
+        ])->withInput($request->only('email'));
     }
 }
